@@ -1,3 +1,4 @@
+
 class Horse:
     x_distance = 0
     sound = 'Frrr'
@@ -14,7 +15,7 @@ class Eagle:
         self.y_distance += dy
 
 
-class Pegasus(Eagle, Horse):
+class Pegasus(Horse, Eagle):
 
     def move(self, dx, dy):
         super().run(dx)
@@ -23,8 +24,11 @@ class Pegasus(Eagle, Horse):
     def get_pos(self):
         return self.x_distance, self.y_distance
 
-    def voice(self):
-        print(Pegasus.sound)
+    def voice(cls):
+        print(super(Horse, cls).sound)
+        print(super(Pegasus, cls).sound)
+        print(Pegasus.__mro__)
+        print('Так из Pegasus должен вызываться "frrr" или "I train, eat, sleep, and repeat"?"')
 
 
 p1 = Pegasus()

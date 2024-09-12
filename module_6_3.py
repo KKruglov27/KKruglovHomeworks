@@ -25,8 +25,8 @@ class Pegasus(Horse, Eagle):
         return self.x_distance, self.y_distance
 
     def voice(cls):
-        print(super(Horse, cls).sound)
-        print(super(Pegasus, cls).sound)
+        print('Horse издает:', super(Horse, cls).sound)
+        print('Pegasus издает:', super(Pegasus, cls).sound)
         print(Pegasus.__mro__)
         print('Так из Pegasus должен вызываться "frrr" или "I train, eat, sleep, and repeat"?"')
 

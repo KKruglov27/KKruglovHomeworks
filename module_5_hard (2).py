@@ -70,7 +70,7 @@ class UrTube():
     #            self.verif = False
     #            self.current_user = login
     #            if self.logistr == 1:
-    #                print(f"Пользователь {login} зарегистрирован, добро пожаловать.")  # Проверка без пароля.
+    #                print(f"Пользователь {login} зарегистрирован, добро пожаловать.") 
     #            else:
     #                print(f"Пользователь {login} авторизован")
     #            print(f"{self.current_user} в сети")

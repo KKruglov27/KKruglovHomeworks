@@ -32,7 +32,6 @@ class Shop():
                     break
             else:
                 addFile.write(f'{J}\n')
-                print('привет')
 
 
 s1 = Shop()

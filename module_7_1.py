@@ -1,4 +1,3 @@
-# -*- coding: cp1251 -*-
 from colorama import Fore, Style
 
 class Product:
@@ -28,7 +27,7 @@ class Shop():
         for J in products:
             for I in lines:
                 if J.name in I:
-                    print(f'Продукт {Fore.LIGHTWHITE_EX}"{J}"{Style.RESET_ALL} уже есть в магазине')
+                    print(f'ГЏГ°Г®Г¤ГіГЄГІ {Fore.LIGHTWHITE_EX}"{J}"{Style.RESET_ALL} ГіГ¦ГҐ ГҐГ±ГІГј Гў Г¬Г ГЈГ Г§ГЁГ­ГҐ')
                     break
             else:
                 addFile.write(f'{J}\n')

@@ -22,16 +22,17 @@ class Shop():
         print(*self.various_products, sep="")
 
     def add_products(self, *products):
-        addFile = open(self.__file_name, 'a+')
+        addFile = open(self.__file_name, 'a+', encoding='utf-8')
         addFile.seek(0)
         lines = addFile.read().splitlines()
         for J in products:
             for I in lines:
                 if J.name in I:
-                    print(f'Продукт {Fore.LIGHTWHITE_EX}"{J}"{Style.RESET_ALL} уже есть в магазине')
+                    print(f'РџСЂРѕРґСѓРєС‚ {Fore.LIGHTWHITE_EX}"{J}"{Style.RESET_ALL} СѓР¶Рµ РµСЃС‚СЊ РІ РјР°РіР°Р·РёРЅРµ')
                     break
             else:
                 addFile.write(f'{J}\n')
+                print('РїСЂРёРІРµС‚')
 
 
 s1 = Shop()

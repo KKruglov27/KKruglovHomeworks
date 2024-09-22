@@ -28,7 +28,3 @@ for elem in result.items():
     print(elem)
 
 # Как же мне здесь мог пригодиться метод seek?
-
-
-
-

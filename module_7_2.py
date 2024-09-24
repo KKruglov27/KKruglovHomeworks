@@ -1,9 +1,10 @@
+
 def custom_write(file_name, info):
-    file_a = open('file_name', 'w', encoding='utf-8')
+    file_a = open(file_name, 'w', encoding='utf-8')
     for line in info:
         file_a.write(f'{line}\n')
     file_a.close()
-    file_r = open('file_name', 'r', encoding='utf-8')
+    file_r = open(file_name, 'r', encoding='utf-8')
     count = 1
     result_dict = {}
     while True:
@@ -23,8 +24,11 @@ info = [
         'Спасибо!'
         ]
 
-result = custom_write('file_name', info)
+result = custom_write('strings_in_some_file', info)
 for elem in result.items():
     print(elem)
 
 # Как же мне здесь мог пригодиться метод seek?
+
+
+

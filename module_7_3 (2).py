@@ -18,16 +18,21 @@ class WordsFinder:
                 words = (' '.join(word.strip(string.punctuation) for word in words.split()))
                 words = [f'{line.lower()}' for line in words.split()]
                 self.all_dicts.update({f'{file_}': words})
+        print()
+        print(f"{Fore.BLUE}All_dicts_with_words:{Style.RESET_ALL}")
+        print()
         for name, words_list in self.all_dicts.items():
-             print()
              print(f"{Fore.GREEN}{name}{Style.RESET_ALL}:")
+             count_line = 0
              if len(words_list) < 20:
                 print(words_list)
              else:
                 for x in zip(*[words_list[i::20] for i in range(20)]):
-                  print(x)
+                  count_line += 1
+                  print(str(count_line) + '.', x)
+        print('__________________')
+        print(f"{Fore.BLUE}Files is ending.{Style.RESET_ALL}")
         print()
-      # return f"All_dicts_with_words", self.all_dicts
 
     def find(self, word):
         self.word_index = {}

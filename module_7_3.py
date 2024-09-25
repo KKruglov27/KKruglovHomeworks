@@ -19,10 +19,15 @@ class WordsFinder:
                 words = [f'{line.lower()}' for line in words.split()]
                 self.all_dicts.update({f'{file_}': words})
         for name, words_list in self.all_dicts.items():
+             print()
              print(f"{Fore.GREEN}{name}{Style.RESET_ALL}:")
-             print(words_list)
+             if len(words_list) < 20:
+                print(words_list)
+             else:
+                for x in zip(*[words_list[i::20] for i in range(20)]):
+                  print(x)
         print()
-        return f"All_dicts_with_words", self.all_dicts
+      # return f"All_dicts_with_words", self.all_dicts
 
     def find(self, word):
         self.word_index = {}
@@ -35,8 +40,8 @@ class WordsFinder:
             self.word_index.update({name: self.all_indexes[0]})
             self.word_indexes.update({name:  self.all_indexes})
             continue
-        return (f"Word's index in file", self.word_index,
-                f"All_indexes", self.word_indexes)
+        print(f"Word's index '{Fore.BLUE}{word.upper()}{Style.RESET_ALL}' in file:", self.word_index)
+        print(f"All_indexes '{Fore.BLUE}{word.upper()}{Style.RESET_ALL}' in file:", self.word_indexes)
 
     def count(self, word):
         self.word_count = {}
@@ -49,15 +54,15 @@ class WordsFinder:
                 count_word = 'not found'
             self.word_count.update({name: count_word})
             continue
-        return f"Words count in file", self.word_count
+        print(f"Words count '{Fore.BLUE}{word.upper()}{Style.RESET_ALL}' in file: ", self.word_count)
+        print()
 
 
 finder = WordsFinder('test_file.txt', 'Rudyard Kipling - If.txt',
                      'Mother Goose - Monday’s Child.txt', )
 
-print(finder.get_all_words())
-print()
-print(finder.find("text"))
-print(finder.count('text'))
-print(finder.find("is"))
-print(finder.count('is'))
+(finder.get_all_words())
+(finder.find("text"))
+(finder.count('text'))
+(finder.find("is"))
+(finder.count('is'))
